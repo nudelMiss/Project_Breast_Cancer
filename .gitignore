@@ -1,28 +1,29 @@
-# Python
+# Keep folder structure but ignore contents
+
+logs/*
+!logs/.gitkeep
+
+results/*
+!results/.gitkeep
+
+exports_by_patient_celltype/*
+!exports_by_patient_celltype/.gitkeep
+
+RDS\ files/*
+!RDS\ files/.gitkeep
+
+
+# Large biological / matrix files
+*.mtx
+*.rds
+*.RDS
+*.h5
+*.hdf5
+
+
+# Python / OS
 __pycache__/
 *.pyc
 venv/
 .env
-
-# R
-.Rhistory
-.RData
-.Rproj.user/
-
-# BIG data / exports / results (do not version)
-exports_by_patient_celltype/
-results/
-results_by_patient_celltype/
-results_by_patient_celltype_*/
-RDS files/
-logs/
-
-# Common big bio files
-*.mtx
-*.h5
-*.hdf5
-*.rds
-*.RDS
-
-# OS
 .DS_Store
