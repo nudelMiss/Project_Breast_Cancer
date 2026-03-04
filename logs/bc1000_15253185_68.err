@@ -1,2 +1,0 @@
-GPU cosine:   0%|          | 0/9 [00:00<?, ?it/s]GPU cosine:  22%|██▏       | 2/9 [00:00<00:00, 14.04it/s]GPU cosine:  44%|████▍     | 4/9 [00:00<00:00, 16.65it/s]GPU cosine:  67%|██████▋   | 6/9 [00:00<00:00, 17.70it/s]GPU cosine:  89%|████████▉ | 8/9 [00:00<00:00, 18.14it/s]GPU cosine: 100%|██████████| 9/9 [00:00<00:00, 18.91it/s]
-[2026-03-04T06:42:55.391] error: *** JOB 15272581 ON cs-pheno-03 CANCELLED AT 2026-03-04T06:42:55 DUE to SIGNAL Terminated ***

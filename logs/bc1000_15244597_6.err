@@ -1,2 +1,0 @@
-GPU cosine:   0%|          | 0/6 [00:00<?, ?it/s]GPU cosine:  17%|█▋        | 1/6 [00:00<00:02,  2.17it/s]GPU cosine:  50%|█████     | 3/6 [00:00<00:00,  5.64it/s]GPU cosine:  83%|████████▎ | 5/6 [00:00<00:00,  7.92it/s]GPU cosine: 100%|██████████| 6/6 [00:00<00:00,  7.30it/s]
-[2026-03-02T23:02:39.352] error: *** JOB 15244603 ON cs-1080-05 CANCELLED AT 2026-03-02T23:02:39 DUE to SIGNAL Terminated ***

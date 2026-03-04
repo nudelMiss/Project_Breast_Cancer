@@ -11,17 +11,11 @@ venv/
 
 # BIG data / exports / results (do not version)
 exports_by_patient_celltype/
-exports_by_patient_celltype/**
-
+results/
 results_by_patient_celltype/
 results_by_patient_celltype_*/
-results_by_patient_celltype_*/**
-
 RDS files/
-RDS files/**
-
 logs/
-logs/**
 
 # Common big bio files
 *.mtx
