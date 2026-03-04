@@ -1,0 +1,15 @@
+{
+  "group": "patient=CID4535__celltype=equivocal",
+  "patient": "CID4535",
+  "celltype": "equivocal",
+  "n_cells": 1040,
+  "n_genes": 12100,
+  "k_nearest": 50,
+  "walk_length": 5,
+  "walks_per_gene": 10,
+  "vector_dim": 64,
+  "epochs": 20,
+  "n_edges": 559866,
+  "n_sentences": 121000,
+  "seed": 42
+}

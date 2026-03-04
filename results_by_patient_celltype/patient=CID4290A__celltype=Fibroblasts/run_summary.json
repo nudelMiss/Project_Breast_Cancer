@@ -1,0 +1,15 @@
+{
+  "group": "patient=CID4290A__celltype=Fibroblasts",
+  "patient": "CID4290A",
+  "celltype": "Fibroblasts",
+  "n_cells": 277,
+  "n_genes": 7667,
+  "k_nearest": 50,
+  "walk_length": 5,
+  "walks_per_gene": 10,
+  "vector_dim": 64,
+  "epochs": 20,
+  "n_edges": 346244,
+  "n_sentences": 76670,
+  "seed": 42
+}

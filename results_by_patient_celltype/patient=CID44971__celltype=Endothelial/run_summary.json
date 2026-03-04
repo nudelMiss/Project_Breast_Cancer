@@ -1,0 +1,15 @@
+{
+  "group": "patient=CID44971__celltype=Endothelial",
+  "patient": "CID44971",
+  "celltype": "Endothelial",
+  "n_cells": 216,
+  "n_genes": 8983,
+  "k_nearest": 50,
+  "walk_length": 5,
+  "walks_per_gene": 10,
+  "vector_dim": 64,
+  "epochs": 20,
+  "n_edges": 408807,
+  "n_sentences": 89830,
+  "seed": 42
+}

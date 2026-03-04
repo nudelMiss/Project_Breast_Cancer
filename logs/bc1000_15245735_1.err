@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/michalnu/project_temp/project_breast/train_model_all_groups_1000_walks_GPU.py", line 296, in <module>
+    main()
+  File "/home/michalnu/project_temp/project_breast/train_model_all_groups_1000_walks_GPU.py", line 290, in main
+    run_one_group(group_dir, out_root / group_dir.name)
+  File "/home/michalnu/project_temp/project_breast/train_model_all_groups_1000_walks_GPU.py", line 230, in run_one_group
+    raise ValueError(f"After possible transpose: mat.shape={mat.shape} but n_genes={len(genes)}")
+ValueError: After possible transpose: mat.shape=(5259, 317) but n_genes=5260

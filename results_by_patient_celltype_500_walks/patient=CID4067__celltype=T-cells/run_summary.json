@@ -1,0 +1,16 @@
+{
+  "group": "patient=CID4067__celltype=T-cells",
+  "patient": "CID4067",
+  "celltype": "T-cells",
+  "n_cells": 686,
+  "n_genes": 6075,
+  "k_nearest": 50,
+  "walk_length": 7,
+  "walks_per_gene": 500,
+  "vector_dim": 64,
+  "epochs": 20,
+  "n_edges": 273308,
+  "n_sentences": 3037500,
+  "seed": 42,
+  "w2v_workers": 8
+}

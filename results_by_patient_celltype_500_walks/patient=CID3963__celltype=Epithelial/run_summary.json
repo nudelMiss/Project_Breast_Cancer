@@ -1,0 +1,15 @@
+{
+  "group": "patient=CID3963__celltype=Epithelial",
+  "patient": "CID3963",
+  "celltype": "Epithelial",
+  "n_cells": 218,
+  "n_genes": 9788,
+  "k_nearest": 50,
+  "walk_length": 7,
+  "walks_per_gene": 500,
+  "vector_dim": 64,
+  "epochs": 20,
+  "n_edges": 422810,
+  "n_sentences": 4894000,
+  "seed": 42
+}

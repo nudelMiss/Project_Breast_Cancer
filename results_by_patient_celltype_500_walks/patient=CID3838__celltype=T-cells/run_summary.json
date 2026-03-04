@@ -1,0 +1,15 @@
+{
+  "group": "patient=CID3838__celltype=T-cells",
+  "patient": "CID3838",
+  "celltype": "T-cells",
+  "n_cells": 1343,
+  "n_genes": 11971,
+  "k_nearest": 50,
+  "walk_length": 7,
+  "walks_per_gene": 500,
+  "vector_dim": 64,
+  "epochs": 20,
+  "n_edges": 576613,
+  "n_sentences": 5985500,
+  "seed": 42
+}

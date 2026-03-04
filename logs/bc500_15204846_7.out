@@ -1,0 +1,14 @@
+Running group: patient=CID4290A__celltype=Fibroblasts
+CPUs: 8
+Found 1 groups under exports_by_patient_celltype
+
+=== GROUP: patient=CID4290A__celltype=Fibroblasts ===
+Loading data...
+Computing top-50 cosine edges for 7667 genes...
+Computed 383350 edges.
+Building igraph object...
+IGRAPH UNW- 7668 346244 -- 
++ attr: name (v), weight (e)
+Min weight: 0.2294217232290465
+Max weight: 0.9955051070107475
+Generating random walk sentences...

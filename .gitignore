@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# BIG data / exports / results (do not version)
+exports_by_patient_celltype/
+exports_by_patient_celltype/**
+
+results_by_patient_celltype/
+results_by_patient_celltype_*/
+results_by_patient_celltype_*/**
+
+RDS files/
+RDS files/**
+
+logs/
+logs/**
+
+# Common big bio files
+*.mtx
+*.h5
+*.hdf5
+*.rds
+*.RDS
+
+# OS
+.DS_Store

@@ -1,0 +1,20 @@
+Running group: patient=CID4290A__celltype=Endothelial
+CPUs: 8
+Found 1 groups under exports_by_patient_celltype
+
+=== GROUP: patient=CID4290A__celltype=Endothelial ===
+Loading data...
+Computing top-50 cosine edges for 8142 genes...
+Computed 407100 edges.
+Building igraph object...
+IGRAPH UNW- 8143 372695 -- 
++ attr: name (v), weight (e)
+Min weight: 0.2247027964232145
+Max weight: 0.9953103093747303
+Generating random walk sentences...
+Generated 4071000 sentences.
+Training Word2Vec model... (workers=8)
+Saved model: results_by_patient_celltype_500_walks/patient=CID4290A__celltype=Endothelial/gene_embeddings_w500_weighted.model
+Saved summary: results_by_patient_celltype_500_walks/patient=CID4290A__celltype=Endothelial/run_summary.json
+
+DONE.

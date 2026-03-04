@@ -1,0 +1,15 @@
+{
+  "group": "patient=CID4495__celltype=B-cell",
+  "patient": "CID4495",
+  "celltype": "B-cell",
+  "n_cells": 1767,
+  "n_genes": 11704,
+  "k_nearest": 50,
+  "walk_length": 5,
+  "walks_per_gene": 10,
+  "vector_dim": 64,
+  "epochs": 20,
+  "n_edges": 524559,
+  "n_sentences": 117040,
+  "seed": 42
+}

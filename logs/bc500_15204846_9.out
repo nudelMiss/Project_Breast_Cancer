@@ -1,0 +1,14 @@
+Running group: patient=CID4290A__celltype=T-cells
+CPUs: 8
+Found 1 groups under exports_by_patient_celltype
+
+=== GROUP: patient=CID4290A__celltype=T-cells ===
+Loading data...
+Computing top-50 cosine edges for 4603 genes...
+Computed 230150 edges.
+Building igraph object...
+IGRAPH UNW- 4604 202489 -- 
++ attr: name (v), weight (e)
+Min weight: 0.15081055169899743
+Max weight: 0.9909179352218473
+Generating random walk sentences...

@@ -1,0 +1,11 @@
+Node: cs-pheno-01
+CUDA_VISIBLE_DEVICES: 0
+Task: 1
+Group: patient=CID3586__celltype=B-cell
+Python: /home/michalnu/.conda/envs/bc_walks/bin/python
+torch: 2.5.1
+cuda available: True
+device: NVIDIA GeForce RTX 3090
+
+=== GROUP: patient=CID3586__celltype=B-cell ===
+expr shape: (5259, 317) n_genes: 5260

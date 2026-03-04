@@ -1,0 +1,14 @@
+Running group: patient=CID4290A__celltype=Epithelial
+CPUs: 8
+Found 1 groups under exports_by_patient_celltype
+
+=== GROUP: patient=CID4290A__celltype=Epithelial ===
+Loading data...
+Computing top-50 cosine edges for 14513 genes...
+Computed 725650 edges.
+Building igraph object...
+IGRAPH UNW- 14514 693120 -- 
++ attr: name (v), weight (e)
+Min weight: 0.06646998570642329
+Max weight: 0.9981842262271116
+Generating random walk sentences...

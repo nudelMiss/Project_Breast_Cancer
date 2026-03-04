@@ -1,0 +1,4 @@
+Node: ise-1080-01
+GPU: 0
+Task: 78
+Group: patient=CID45171__celltype=T-cells
