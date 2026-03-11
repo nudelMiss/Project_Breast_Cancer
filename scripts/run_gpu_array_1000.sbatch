@@ -20,7 +20,7 @@ SEED=42
 COS_BATCH=1024   # lower to 512 if GPU OOM
 
 PY=~/.conda/envs/bc_walks/bin/python
-SCRIPT="train_model_all_groups_1000_walks_GPU.py"
+SCRIPT="scripts/train_model_all_groups_1000_walks_GPU.py"
 
 mkdir -p logs "$OUT_ROOT"
 
