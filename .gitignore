@@ -21,6 +21,9 @@ RDS\ files/*
 *.hdf5
 
 
+GSDB.list.of.lists*
+
+
 # Python / OS
 __pycache__/
 *.pyc

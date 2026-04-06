@@ -1,4 +1,5 @@
 #!/bin/bash
+#SBATCH --partition=main
 #SBATCH --job-name=pcoa_w2v
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=32G
@@ -6,16 +7,21 @@
 #SBATCH --output=logs/pcoa_%j.out
 #SBATCH --error=logs/pcoa_%j.err
 
-set -euo pipefail
+set -eo pipefail
 
 cd ~/project_temp/project_breast
-mkdir -p logs
+mkdir -p logs results/PCoA
 
-PY=~/.conda/envs/bc_walks/bin/python
+module load anaconda
 
-$PY -u embedding_pcoa.py \
-  --models_root results_by_patient_celltype_1000_walks \
-  --pattern gene_embeddings_w1000_weighted.model \
+set +u
+source activate bc_walks
+set -u
+
+python -u scripts/PCoA/embedding_pcoa.py \
+  --models_root results/results_by_patient_celltype_500_walks \
+  --pattern gene_embeddings.model \
   --sample_genes 500 \
   --seed 42 \
-  --out_prefix pcoa_latest_ellipses_sample500
+  --out_prefix results/PCoA/cosine_50_edges_500_walks/pcoa_walks500_sample500 \
+  --variant_label "cosine, 50 edges, 500 walks"
