@@ -4,7 +4,6 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=12G
 #SBATCH --time=06:00:00
-#SBATCH --array=0-0
 #SBATCH --output=logs/auc_5_walks_%A_%a.out
 #SBATCH --error=logs/auc_5_walks_%A_%a.err
 
@@ -18,6 +17,7 @@ OUTPUT_ROOT="${OUTPUT_ROOT:-results/auc_benchmarks/5_walks_all}"
 PYTHON_BIN="${PYTHON_BIN:-$PWD/.venv/bin/python}"
 MIN_COMPLEX_SIZE="${MIN_COMPLEX_SIZE:-3}"
 RANDOM_SEED="${RANDOM_SEED:-42}"
+FILTER_SIGNIFICANT="${FILTER_SIGNIFICANT:-0}"
 
 if [ ! -f "$MANIFEST_PATH" ]; then
   echo "ERROR: manifest file not found: $MANIFEST_PATH"
@@ -66,11 +66,21 @@ if [ -f "$summary_path" ]; then
   exit 0
 fi
 
-"$PYTHON_BIN" scripts/AUC/benchmark_corum_auc.py \
-  --embedding_path "$EMBEDDING_PATH" \
-  --corum_path "$CORUM_PATH" \
-  --output_dir "$OUTPUT_ROOT" \
-  --min_complex_size "$MIN_COMPLEX_SIZE" \
-  --random_seed "$RANDOM_SEED"
+if [[ "$FILTER_SIGNIFICANT" == "1" ]]; then
+  "$PYTHON_BIN" scripts/AUC/benchmark_corum_auc.py \
+    --embedding_path "$EMBEDDING_PATH" \
+    --corum_path "$CORUM_PATH" \
+    --output_dir "$OUTPUT_ROOT" \
+    --min_complex_size "$MIN_COMPLEX_SIZE" \
+    --random_seed "$RANDOM_SEED" \
+    --filter_significant
+else
+  "$PYTHON_BIN" scripts/AUC/benchmark_corum_auc.py \
+    --embedding_path "$EMBEDDING_PATH" \
+    --corum_path "$CORUM_PATH" \
+    --output_dir "$OUTPUT_ROOT" \
+    --min_complex_size "$MIN_COMPLEX_SIZE" \
+    --random_seed "$RANDOM_SEED"
+fi
 
 echo "DONE: $EMBEDDING_PATH"

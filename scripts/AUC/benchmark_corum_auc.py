@@ -29,7 +29,8 @@ import numpy as np
 import pandas as pd
 from gensim.models import Word2Vec
 from scipy.spatial.distance import pdist
-from scipy.stats import zscore
+from scipy.stats import mannwhitneyu, zscore
+from statsmodels.stats.multitest import multipletests
 from sklearn.metrics import roc_auc_score
 
 
@@ -49,6 +50,8 @@ class ComplexAUCResult:
     n_positive_pairs: int  # Within-complex pairs
     n_negative_pairs: int  # Between-complex pairs sampled
     auc: float
+    p_value: float = np.nan
+    adjusted_p_value: float = np.nan
 
 
 @dataclass
@@ -265,6 +268,14 @@ def compute_complex_auc(
     else:
         auc = roc_auc_score(labels, scores)
 
+    # One-sided test for enrichment of within-complex similarities.
+    try:
+        p_value = float(
+            mannwhitneyu(positive_scores, negative_scores, alternative='greater').pvalue
+        )
+    except Exception:
+        p_value = np.nan
+
     return ComplexAUCResult(
         complex_id=complex_id,
         complex_name=complex_name,
@@ -273,6 +284,7 @@ def compute_complex_auc(
         n_positive_pairs=n_positive,
         n_negative_pairs=n_negative,
         auc=auc,
+        p_value=p_value,
     )
 
 
@@ -363,6 +375,20 @@ def run_benchmark(
         else:
             n_skipped += 1
 
+    # BH correction across valid p-values from all evaluated complexes.
+    if results:
+        p_values = np.array([r.p_value for r in results], dtype=float)
+        valid_mask = np.isfinite(p_values)
+        if np.any(valid_mask):
+            _, adjusted_vals, _, _ = multipletests(p_values[valid_mask], method='fdr_bh')
+            adj_idx = 0
+            for i, r in enumerate(results):
+                if valid_mask[i]:
+                    r.adjusted_p_value = float(adjusted_vals[adj_idx])
+                    adj_idx += 1
+                else:
+                    r.adjusted_p_value = np.nan
+
     # Compute summary
     if results:
         aucs = np.array([r.auc for r in results])
@@ -403,6 +429,7 @@ def save_results(
     summary: BenchmarkSummary,
     output_dir: Path,
     embedding_path: Path,
+    filter_significant: bool,
 ):
     """
     Save benchmark results to CSV files.
@@ -429,10 +456,14 @@ def save_results(
                 'n_positive_pairs': r.n_positive_pairs,
                 'n_negative_pairs': r.n_negative_pairs,
                 'auc': r.auc,
+                'p_value': r.p_value,
+                'adjusted_p_value': r.adjusted_p_value,
             }
             for r in results
         ]
     )
+    if filter_significant:
+        df_results = df_results[df_results['adjusted_p_value'] < 0.05].copy()
     df_results.to_csv(per_complex_path, index=False)
     print(f"Saved per-complex: {per_complex_path}", flush=True)
 
@@ -492,6 +523,11 @@ def parse_args():
     parser.add_argument(
         '--random_seed', type=int, default=42, help='Random seed for reproducibility'
     )
+    parser.add_argument(
+        '--filter_significant',
+        action='store_true',
+        help='If set, keep only per-complex rows with adjusted_p_value < 0.05.',
+    )
     return parser.parse_args()
 
 
@@ -515,7 +551,13 @@ def main():
         random_seed=args.random_seed,
     )
 
-    save_results(results, summary, output_dir, embedding_path)
+    save_results(
+        results,
+        summary,
+        output_dir,
+        embedding_path,
+        filter_significant=args.filter_significant,
+    )
 
     print("\n=== SUMMARY ===", flush=True)
     print(f"Complexes used: {summary.n_complexes_used}", flush=True)
