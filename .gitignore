@@ -1,0 +1,32 @@
+# Keep folder structure but ignore contents
+
+logs/*
+!logs/.gitkeep
+
+results/*
+!results/.gitkeep
+
+exports_by_patient_celltype/*
+!exports_by_patient_celltype/.gitkeep
+
+RDS\ files/*
+!RDS\ files/.gitkeep
+
+
+# Large biological / matrix files
+*.mtx
+*.rds
+*.RDS
+*.h5
+*.hdf5
+
+
+GSDB.list.of.lists*
+
+
+# Python / OS
+__pycache__/
+*.pyc
+venv/
+.env
+.DS_Store
