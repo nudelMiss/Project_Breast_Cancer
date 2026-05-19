@@ -3,8 +3,9 @@
 logs/*
 !logs/.gitkeep
 
-results/*
-!results/.gitkeep
+results/**
+!results/**/
+!results/**/.gitkeep
 
 exports_by_patient_celltype/*
 !exports_by_patient_celltype/.gitkeep
