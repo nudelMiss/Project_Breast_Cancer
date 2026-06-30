@@ -3,9 +3,7 @@
 logs/*
 !logs/.gitkeep
 
-results/**
-!results/**/
-!results/**/.gitkeep
+results/
 
 exports_by_patient_celltype/*
 !exports_by_patient_celltype/.gitkeep
@@ -31,3 +29,5 @@ __pycache__/
 venv/
 .env
 .DS_Store
+# Quarantined, pending manual rm
+_trash_review/
