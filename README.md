@@ -40,8 +40,7 @@ Pooled single-cell breast-tumor data from public atlases (Tirosh lab / Weizmann 
 
 ## Repository structure
 
-    scripts/          pipeline code: preprocessing, graph build, walks, Word2Vec, AUC benchmarks
-    scripts/visualization/  cross-cohort UMAP / PCoA / LDA + poster figures
+    scripts/      all pipeline code -- see scripts/README.md for the full layout and flow
     resources/        gene-set definitions and CORUM reference
 
 Raw matrices, trained models, and per-run results live on the cluster and are excluded from version control.

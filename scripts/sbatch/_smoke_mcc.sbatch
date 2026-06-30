@@ -12,7 +12,7 @@ source activate bc_walks
 cd /mnt/new_groups/ofircohen-group/users/michalnu_yuvat/project_breast
 echo "host=$(hostname)  jobid=$SLURM_JOBID  start=$(date)"
 
-python -u scripts/MCC/benchmark_corum_mcc.py \
+python -u scripts/AUC/benchmark_corum_mcc.py \
   --embedding_path results/models_bassez_spearman_star/BIOKEY_30_Malignant/spearman_star_w100_k5_var75/gene_embeddings.model \
   --corum_path resources/corum_core_complexes.tsv \
   --output_dir results/bassez2021/_smoke_mcc/BIOKEY_30_Malignant_var75 \

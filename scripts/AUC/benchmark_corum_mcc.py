@@ -19,7 +19,7 @@ For a trained Word2Vec model:
      Plus a full threshold-sweep CSV.
 
 Usage:
-    python scripts/MCC/benchmark_corum_mcc.py \
+    python scripts/AUC/benchmark_corum_mcc.py \
         --embedding_path .../gene_embeddings.model \
         --corum_path resources/corum_core_complexes.tsv \
         --output_dir .../mcc/<group>/<tag>/ \

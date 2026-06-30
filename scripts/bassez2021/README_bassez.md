@@ -21,7 +21,7 @@ python3 scripts/bassez2021/build_manifest.py \
 MANIFEST=results/bassez2021/manifests/pilot.tsv sbatch \
     --job-name=bzPilot --array=0-47%20 \
     --export=ALL,MANIFEST=results/bassez2021/manifests/pilot.tsv \
-    scripts/slurm/bassez_train_eval_array.sbatch
+    scripts/sbatch/bassez_train_eval_array.sbatch
 
 # Validate
 python3 scripts/bassez2021/validate_outputs.py \
@@ -59,7 +59,7 @@ N=$(($(wc -l < results/bassez2021/manifests/stage2.tsv) - 1))
 MANIFEST=results/bassez2021/manifests/stage2.tsv sbatch \
     --job-name=bzStage2 --array=0-$((N-1))%20 \
     --export=ALL,MANIFEST=results/bassez2021/manifests/stage2.tsv \
-    scripts/slurm/bassez_train_eval_array.sbatch
+    scripts/sbatch/bassez_train_eval_array.sbatch
 
 # Validate + aggregate
 python3 scripts/bassez2021/validate_outputs.py \
@@ -90,7 +90,7 @@ N=$(($(wc -l < results/bassez2021/manifests/saturation.tsv) - 1))
 MANIFEST=results/bassez2021/manifests/saturation.tsv sbatch \
     --job-name=bzSat --array=0-$((N-1))%20 \
     --export=ALL,MANIFEST=results/bassez2021/manifests/saturation.tsv \
-    scripts/slurm/bassez_train_eval_array.sbatch
+    scripts/sbatch/bassez_train_eval_array.sbatch
 
 python3 scripts/bassez2021/aggregate_pilot.py \
     --manifest results/bassez2021/manifests/saturation.tsv \
@@ -114,7 +114,7 @@ MANIFEST=results/bassez2021/manifests/joint.tsv sbatch \
     --job-name=bzJoint --array=0-1%2 \
     --time=0-24:00:00 --mem=128G --cpus-per-task=12 \
     --export=ALL,MANIFEST=results/bassez2021/manifests/joint.tsv \
-    scripts/slurm/bassez_train_eval_array.sbatch
+    scripts/sbatch/bassez_train_eval_array.sbatch
 ```
 
 ## 5. Final aggregation + figures

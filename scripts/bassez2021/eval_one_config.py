@@ -60,7 +60,7 @@ def main():
         print(f"[SKIP] MCC exists: {mcc_summary}", flush=True)
     else:
         cmd = [
-            sys.executable, "-u", "scripts/MCC/benchmark_corum_mcc.py",
+            sys.executable, "-u", "scripts/AUC/benchmark_corum_mcc.py",
             "--embedding_path", str(model_path),
             "--corum_path", args.corum,
             "--output_dir", str(mcc_dir),
