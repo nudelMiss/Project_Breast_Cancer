@@ -1,6 +1,6 @@
 # Elucidating Cell-Type-Specific Gene Function with Single-Cell RNA-seq Using Co-Expression Graphs and Language Models
 
-*Bioinformatics final project · Ben-Gurion University of the Negev · 202-2026-14*
+*Bioinformatics final project · Ben-Gurion University of the Negev *
 
 **Michal Nudelman & Yuval Tal**
 Advisors: Yaniv Pevzner · Dr. Ofir Cohen · Prof. Chen Keasar
