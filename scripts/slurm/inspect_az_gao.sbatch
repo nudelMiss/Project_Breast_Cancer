@@ -11,6 +11,6 @@ set -eo pipefail
 PROOT=/mnt/new_groups/ofircohen-group/users/michalnu_yuvat/project_breast
 for a in $(seq 1 30); do [ -d "$PROOT" ] && break; ls /mnt /mnt/new_groups /mnt/new_groups/ofircohen-group >/dev/null 2>&1 || true; sleep 5; done
 cd "$PROOT"; module load anaconda; source activate bc_r
-echo "############ AZIZI ############"; Rscript scripts/inspect_assays.R "RDS_files/Azizi2018_Breast_10x.RDS" 2>&1
-echo "############ GAO ############"; Rscript scripts/inspect_assays.R "RDS_files/Data_Gao2021_Breast.RDS" 2>&1
+echo "############ AZIZI ############"; Rscript scripts/exports/inspect_assays.R "RDS_files/Azizi2018_Breast_10x.RDS" 2>&1
+echo "############ GAO ############"; Rscript scripts/exports/inspect_assays.R "RDS_files/Data_Gao2021_Breast.RDS" 2>&1
 echo done=$(date)

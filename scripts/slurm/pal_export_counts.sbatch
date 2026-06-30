@@ -16,7 +16,7 @@ for i in 01 02 03 04 05; do
   RDS="RDS_files/Pal2021_Breast_${i}_10x.RDS"
   [ -f "$RDS" ] || { echo "MISSING $RDS"; continue; }
   echo "############ PAL FILE $i ############"
-  Rscript scripts/pal2021_export.R --rds="$RDS" --output_root=exports_pal2021 --slot=counts --min_cells=200 --skip_celltype=equivocal || echo "[WARN] file $i export failed"
+  Rscript scripts/exports/pal2021_export.R --rds="$RDS" --output_root=exports_pal2021 --slot=counts --min_cells=200 --skip_celltype=equivocal || echo "[WARN] file $i export failed"
 done
 echo "exports_pal2021 groups: $(ls -d exports_pal2021/patient=*/ 2>/dev/null | wc -l)"
 echo done=$(date)

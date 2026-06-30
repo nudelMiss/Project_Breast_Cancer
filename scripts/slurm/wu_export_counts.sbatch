@@ -14,7 +14,7 @@ for a in $(seq 1 30); do [ -d "$PROOT" ] && break; ls /mnt/new_groups/ofircohen-
 cd "$PROOT"
 module load anaconda
 source activate bc_r
-Rscript scripts/wu2021/export_wu_counts.R \
+Rscript scripts/exports/export_wu_counts.R \
   --rds="RDS files/Wu2021_Breast.RDS" \
   --output_root=exports_wu_counts \
   --slot=counts \

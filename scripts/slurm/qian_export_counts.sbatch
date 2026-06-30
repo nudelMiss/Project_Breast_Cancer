@@ -14,7 +14,7 @@ for a in $(seq 1 30); do [ -d "$PROOT" ] && break; ls /mnt /mnt/new_groups /mnt/
 cd "$PROOT"
 module load anaconda
 source activate bc_r
-Rscript scripts/qian2020_export.R \
+Rscript scripts/exports/qian2020_export.R \
   --rds="RDS_files/Qian2020_Breast_10x.RDS" \
   --output_root=exports_qian \
   --slot=counts \

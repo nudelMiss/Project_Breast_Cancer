@@ -14,5 +14,5 @@ for a in $(seq 1 30); do [ -d "$PROOT" ] && break; ls /mnt /mnt/new_groups /mnt/
 cd "$PROOT"
 module load anaconda
 source activate bc_r
-Rscript scripts/griffiths2021/inspect_meta.R "RDS files/Griffiths2021_Breast_10X.RDS" 2>&1
+Rscript scripts/exports/inspect_meta.R "RDS files/Griffiths2021_Breast_10X.RDS" 2>&1
 echo done=$(date)

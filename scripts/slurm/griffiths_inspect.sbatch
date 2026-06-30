@@ -20,5 +20,5 @@ cd "$PROOT"
 
 module load anaconda
 source activate bc_r
-Rscript scripts/inspect_bassez_rds.R "RDS files/Griffiths2021_Breast_10X.RDS" 2>&1
+Rscript scripts/exports/inspect_bassez_rds.R "RDS files/Griffiths2021_Breast_10X.RDS" 2>&1
 echo done=$(date)
