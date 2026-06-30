@@ -1,3 +1,0 @@
-/home/michalnu/.local/lib/python3.10/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
-  warn(
-OMP: Info #276: omp_set_nested routine deprecated, please use omp_set_max_active_levels instead.
