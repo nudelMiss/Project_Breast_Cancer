@@ -1,0 +1,35 @@
+model=/groups/ofircohen-group/users/michalnu_yuvat/project_breast/results/bassez2021/models_joint_by_celltype/celltype=Malignant/propr_bidirectional_w10_k50_var75_hvg2000_jointct/gene_embeddings.model
+exists=True
+programs: {'S_phase': 43, 'G2M': 54, 'IFN_alpha': 98, 'IFN_gamma': 198}
+4820 genes, dim=64
+SNN edges after prune: 189121
+Louvain modules: 22  sizes=[708, 655, 432, 398, 320, 254, 219, 208, 204, 174, 171, 151, 144, 137, 130, 108, 100, 81, 75, 59, 57, 35]
+/home/yuvat/.conda/envs/bc_walks/lib/python3.9/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(
+UMAP done
+top program per module:
+ module   program  overlap         qval
+      0       G2M        1 1.000000e+00
+      1       G2M        0 1.000000e+00
+      2       G2M        0 1.000000e+00
+      3 IFN_gamma        0 1.000000e+00
+      4       G2M        0 1.000000e+00
+      5 IFN_gamma        1 1.000000e+00
+      6 IFN_gamma        0 1.000000e+00
+      7       G2M       51 1.734013e-69
+      8       G2M        0 1.000000e+00
+      9       G2M        0 1.000000e+00
+     10       G2M        0 1.000000e+00
+     11       G2M        0 1.000000e+00
+     12       G2M        0 1.000000e+00
+     13       G2M        0 1.000000e+00
+     14       G2M        0 1.000000e+00
+     15       G2M        0 1.000000e+00
+     16       G2M        0 1.000000e+00
+     17       G2M        0 1.000000e+00
+     18 IFN_alpha       38 5.734796e-46
+     19       G2M        0 1.000000e+00
+     20       G2M        0 1.000000e+00
+     21       G2M        0 1.000000e+00
+[FIG] gene_modules_bassez2021_Malignant_louvain_umap.png
+DONE

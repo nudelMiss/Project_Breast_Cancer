@@ -31,3 +31,11 @@ venv/
 .DS_Store
 # Quarantined, pending manual rm
 _trash_review/
+
+# Data, environments, and intermediate work - cluster-only, never versioned
+exports_*/
+objects/
+RDS_files/
+envs/
+external/
+debug/
