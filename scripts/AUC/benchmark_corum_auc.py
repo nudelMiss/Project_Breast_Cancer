@@ -239,12 +239,12 @@ def compute_complex_auc(
     if len(non_complex_list) < 1:
         return None
 
-    # Sample same number as positive pairs
+    # Sample negative pairs: use at least 200 to stabilise AUC for small complexes
+    n_neg_target = max(200, n_positive)
     between_pairs = []
     genes_in_list = list(genes_in_complex)
 
-    # Sample with replacement to ensure we get enough pairs
-    for _ in range(n_positive):
+    for _ in range(n_neg_target):
         g1 = rng.choice(genes_in_list)
         g2 = rng.choice(non_complex_list)
         idx1, idx2 = gene_to_idx[g1], gene_to_idx[g2]

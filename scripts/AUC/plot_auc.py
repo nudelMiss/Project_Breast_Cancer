@@ -4,14 +4,14 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 
 # --- Configuration settings ---
-WALKS = "500"  # Options: "5", "50", "100", "500"
+WALKS = "5"  # Options: "5", "50", "100", "500"
 METRIC = "spearman"  # Options: "spearman", "cosine"
 # ------------------------------
 
 def generate_boxplot():
-    # Define directory paths
-    input_root = Path(f"results/auc_benchmarks/{METRIC}/walks_{WALKS}")
-    output_png = input_root / f"boxplot_auc_{METRIC}_w{WALKS}.png"
+    # Define directory paths using a relative path (removed the leading slash)
+    input_root = Path(f"results/auc_benchmarks/{METRIC}/walks_{WALKS}_variance")
+    output_png = input_root / f"boxplot_auc_{METRIC}_w{WALKS}_variance.png"
     
     # Locate all summary files in the directory tree
     summary_files = list(input_root.rglob("corum_auc_summary.csv"))

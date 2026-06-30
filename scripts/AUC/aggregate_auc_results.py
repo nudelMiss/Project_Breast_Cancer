@@ -177,7 +177,7 @@ def main() -> None:
     # ==========================================
 
     total_models = len(combined)
-    combined_filtered = combined[combined[auc_col] > 0.5].copy()
+    combined_filtered = combined.copy()
     remaining_models = len(combined_filtered)
 
     print(
@@ -221,7 +221,7 @@ def main() -> None:
     #               f"Configuration: {walks} Walks")
 
     # Title for AUC > 0.5 filtering:
-    full_title = (f"CORUM AUC Analysis: {metric.upper()} Metric (Filtered > 0.5)\n"
+    full_title = (f"CORUM AUC Analysis: {metric.upper()} Metric (Only T-cells)\n"
                 f"Showing {remaining_models} out of {total_models} models ({success_rate:.1f}%)\n"
                 f"Configuration: {walks} Walks")
     
