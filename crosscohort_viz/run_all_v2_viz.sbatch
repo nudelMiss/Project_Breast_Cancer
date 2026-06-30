@@ -13,12 +13,12 @@ PROOT=/mnt/new_groups/ofircohen-group/users/michalnu_yuvat/project_breast
 for a in $(seq 1 30); do [ -d "$PROOT" ] && break; ls /mnt/new_groups/ofircohen-group >/dev/null 2>&1 || true; sleep 5; done
 cd "$PROOT"; module load anaconda; source activate bc_walks
 for s in \
-  crosscohort_viz/build_lda_emb_6cohort_v2.py \
-  crosscohort_viz/build_umap_emb_6cohort_v2.py \
-  crosscohort_viz/build_pcoa_emb_bc_jointct_v2.py \
-  crosscohort_viz/build_pcoa_emb_bc_v2.py \
-  crosscohort_viz/build_pcoa_bc_strong_v2.py \
-  crosscohort_viz/build_pcoa_v2run.py ; do
+  crosscohort_viz/lda/build_lda_emb_6cohort_v2.py \
+  crosscohort_viz/umap/build_umap_emb_6cohort_v2.py \
+  crosscohort_viz/pcoa/build_pcoa_emb_bc_jointct_v2.py \
+  crosscohort_viz/pcoa/build_pcoa_emb_bc_v2.py \
+  crosscohort_viz/pcoa/build_pcoa_bc_strong_v2.py \
+  crosscohort_viz/pcoa/build_pcoa_v2run.py ; do
   echo "######## RUN $s ########"
   python -u "$s" && echo "[OK] $s" || echo "[FAIL] $s rc=$?"
   echo
