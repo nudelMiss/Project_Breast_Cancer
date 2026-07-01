@@ -34,6 +34,23 @@ Our twist is to borrow a proven NLP tool. Treat each **cell as a sentence** and 
 
 Benchmarks drawn from Tirosh 2016 / Seurat `cc.genes` (cell cycle) and MSigDB Hallmark (interferon). CORUM protein complexes are reported only as a secondary *method-limit* reference — complexes are regulated post-transcriptionally and co-express weakly at the mRNA level.
 
+## Key figures
+
+![Association-metric comparison](figures/metric_comparison.png)
+*Rank/proportion-based metrics (propr, Spearman) beat magnitude-based ones (cosine, IDS) on every benchmark.*
+
+![AUC by biological module](figures/auc_by_biological_module.png)
+*Recovery of known gene modules at k=50; cell-cycle (G2M) reaches AUC 0.92.*
+
+![Per-patient vs joint-by-cell-type](figures/per_patient_vs_joint.png)
+*Pooling embeddings by cell type across patients is the headline lever (~0.84 -> ~0.91).*
+
+![Neighborhood-size (k) sweep](figures/neighborhood_k_sweep.png)
+*Signal climbs to k around 50, then saturates.*
+
+![Raw vs ALRA imputation](figures/imputation_raw_vs_alra.png)
+*Raw and ALRA imputation give essentially the same mean bio-module AUC.*
+
 ## Data
 
 Pooled single-cell breast-tumor data from public atlases (Tirosh lab / Weizmann 3CA, scBaseCount, and others): a harmonized resource of 188 studies / 6.5M cells with consensus cell-type labels (SingleR + SCType + Scimilarity vote). Primary cohorts: **Bassez2021** (primary), Wu2021, Qian2020, Pal2021, Gao2021, Azizi2018.
