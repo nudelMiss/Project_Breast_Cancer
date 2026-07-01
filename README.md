@@ -36,20 +36,11 @@ Benchmarks drawn from Tirosh 2016 / Seurat `cc.genes` (cell cycle) and MSigDB Ha
 
 ## Key figures
 
+![Gene embeddings cluster by cell type (UMAP)](figures/umap_by_celltype.png)
+*Word2Vec gene embeddings, pooled by cell type across cohorts, separate cleanly by cell type.*
+
 ![Association-metric comparison](figures/metric_comparison.png)
 *Rank/proportion-based metrics (propr, Spearman) beat magnitude-based ones (cosine, IDS) on every benchmark.*
-
-![AUC by biological module](figures/auc_by_biological_module.png)
-*Recovery of known gene modules at k=50; cell-cycle (G2M) reaches AUC 0.92.*
-
-![Per-patient vs joint-by-cell-type](figures/per_patient_vs_joint.png)
-*Pooling embeddings by cell type across patients is the headline lever (~0.84 -> ~0.91).*
-
-![Neighborhood-size (k) sweep](figures/neighborhood_k_sweep.png)
-*Signal climbs to k around 50, then saturates.*
-
-![Raw vs ALRA imputation](figures/imputation_raw_vs_alra.png)
-*Raw and ALRA imputation give essentially the same mean bio-module AUC.*
 
 ## Data
 
